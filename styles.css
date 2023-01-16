@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200&family=Roboto:wght@100;400;500;700;900&display=swap');
+
+body {
+    display: grid;
+    grid-template: 175px 1fr 1fr / 300px 5fr 5fr 4fr;
+    margin: 0;
+    --card-radius: 5px;
+    --card-padding: 25px 20px;
+    font-family: 'Roboto';
+    --large-icon-length: 80px;
+    --medium-icon-length: 40px;
+    --small-icon-length: 20px;
+    background-color: #34d399;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+button:active {
+    box-shadow: 0 1px #666;
+    transform: translateY(1px); 
+}
+
+.large-icon {
+    color: white;
+    height: var(--large-icon-length);
+    width: var(--large-icon-length);
+}
+
+.medium-icon {
+    color: white;
+    height: var(--medium-icon-length);
+    width: var(--medium-icon-length);
+}
+
+.small-icon {
+    color: white;
+    height: var(--small-icon-length);
+    width: var(--small-icon-length);
+}
+
+nav {
+    grid-area: 1 / 2 / 2 / 5;
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+    box-shadow: 0 3px 5px gray;
+    background-color: #f8fafc;
+}
+
+nav > .head-top {
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    align-items: center;
+}
+
+.head-top > .search {
+    grid-column: 1 / 2;
+    display: flex;
+    padding-left: 5%;
+    gap: 10px;
+}
+
+.head-top .search input {
+    flex-grow: 1;
+    background-color: #e2e8f0;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.head-top .head-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10%;
+    gap: 20px;
+}
+
+.head-icons .notification-button {
+    background-color: transparent;
+}
+
+nav > .head-bottom {
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+}
+
+.head-bottom .profile-intro {
+    grid-column: 1 / 2;
+    padding-left: 5%;
+    display: flex;
+    gap: 20px;
+}
+
+.head-bottom .profile-intro .nametag-container {
+    font-weight: 500;
+}
+
+.head-bottom .nametag-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.nametag-container * {
+    margin: 0;
+}
+
+.head-bottom .buttons {
+    grid-column: 2 / 3;
+    justify-self: self-end;
+    padding-right: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.head-bottom .buttons button {
+    color: white; 
+    background-color: #047857;
+    border: transparent;
+    padding: 10px 30px;
+    border-radius: 20px; 
+}
+
+.head-bottom .buttons button:hover {
+    color: lightgray;
+}
+
+
+.sidebar {
+    grid-area: 1 / 1 / 4 / 2;
+    display: grid;
+    grid-template-rows: 100px 200px 100px 1fr;
+    background-color:#047857;
+}
+
+.sidebar > .dashboard {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5%;
+    grid-row: 1 / 2;
+}
+
+
+.dashboard h1 {
+    color: white;
+    margin: 0;
+    font-size: 30px;
+}
+
+.dashboard > .dashboard-vals {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar > .main-items {
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sidebar .main-items * {
+    margin: 0;
+}
+
+.sidebar .misc-items * {
+    margin: 0;
+}
+
+.main-items .main-item, .misc-items .misc-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    font-weight: bold;
+    margin-left: 3%;
+}
+
+.sidebar > .misc-items {
+    grid-row: 3/ 4;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+.content-container {
+    grid-area: 2 / 2 / 4 / 5;
+    display: grid;
+    grid-template: 1fr 1fr / 3fr 3fr 2fr;
+    padding: 2%;
+}
+
+.content-container .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 20px;
+    padding-right: 20px;
+}
+
+.content-container .cards .buttons button {
+    background-color: transparent; 
+    border: none; 
+    padding: 0;
+}
+
+.content-container .cards .buttons .star-plus {
+    fill: #64748b
+}
+
+.content-container .cards .buttons .star-plus:hover {
+    fill: white;
+}
+
+
+.content-container .cards .card, .announcements-container .announcements, 
+.trending-container .trending-items {
+    background-color: white;
+    border-radius: var(--card-radius);
+    padding: var(--card-padding);
+}
+
+.content-container .card {
+    border-left: 10px solid orange;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.card p.head {
+    font-weight: 500;
+}
+
+.card p.body {
+    color: #64748b;
+}
+
+.project-container {
+    grid-area: 1 / 1 / 3 / 3;
+}
+
+.project-container .project-header {
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.announcements-container {
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.announcements-container > p, .trending-container > p {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.announcements-container .announcements {
+    padding: 10px 20px;
+}
+
+.announcements-container .announcements .head{
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.announcements-container .announcements .body {
+    color: #64748b;
+}
+
+.announcements-container .announcements .announcement:not(.announcement:last-child) {
+    border-bottom: 1px solid #64748b;
+}
+
+.trending-container {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.trending-container .trending-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.trending-container .trending-items .trending-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.trending-container .trending-items .trending-item .info p {
+    margin: 0;
+}
+
+.trending-container .trending-items .trending-item .info p.desc {
+    color: #64748b;
+}
+
+

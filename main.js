@@ -1,0 +1,1 @@
+import { mdiViewDashboard } from '@mdi/js';
